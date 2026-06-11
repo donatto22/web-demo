@@ -285,4 +285,109 @@ nombres.forEach((nombre) => {
     }
 })
 
-nombres = 123
+
+
+// ---------------
+let nombres2 = ["Carlos", "Ana", "Luis"]
+// sort se utiliza para ordenar un arreglo
+console.log(nombres2.sort())
+
+let numeros = [3, 5, 7, 1, 0, 6]
+console.log(numeros.sort())
+
+// every - todos los elementos deben de cumplir
+// la condición que se establece
+
+/*
+for(let i = 0; i < precios.length; i++)  {
+    if(precios[i] >= 200) {
+        "true"
+    } else {
+        "false"
+    }
+}
+*/
+let precios = [100, 95, 120, 300]
+console.log(precios.every((precio) => precio >= 200)) // &&
+
+let algunoCumple = precios.some((p) => p >= 200)
+
+if (algunoCumple) {
+    console.log("Alguno cumple")
+} else {
+    console.log("Ninguno cumple")
+}
+
+// -----------------------------
+let ciudadesPeru = ["San Isidro", "Lince", "Miraflores", "San Miguel", "Barranco"]
+
+// Eliminar
+ciudadesPeru.splice(1, 2)
+
+console.log(ciudadesPeru)
+
+// Editar / Reemplazar
+ciudadesPeru.splice(1, 1, "Surco")
+console.log(ciudadesPeru)
+
+ciudadesPeru.splice(2, 1, "Ate")
+console.log(ciudadesPeru)
+
+// Agregar elementos
+ciudadesPeru.splice(3, 0, "Magdalena del mar", "Lince", "Miraflores")
+console.log(ciudadesPeru)
+
+// EXTRA
+ciudadesPeru.splice(1, 1, [1, 2, 3], "Lurin")
+console.log("--------------------")
+console.log(ciudadesPeru)
+
+// cómo encontrar elementos?
+const edades3 = [5, 21, 19, 13, 15, 10]
+// me crea un arreglo con todos los elementos
+// que cumplan la condición
+console.log(edades3.filter((edad) => edad >= 16))
+// me da la 1era coincidencia con la condición
+console.log(edades3.find((edad) => edad >= 16))
+
+// ----------
+// usamos map para transformar cada elemento
+// nos crea un nuevo arreglo del mismo
+// NO MODIFICA EL ORIGINAL
+let precios2 = [100, 95, 120, 300]
+console.log(precios2.map((p) => p * 0.9))
+
+// -----------------
+const producto = {
+    color: "negro",
+    nombre: "Teclado",
+    precio: [1, 2, 3, 4, 5],
+    modelo: "XL"
+}
+
+const { modelo } = producto
+
+console.log(modelo)
+
+// ---------------------------
+const pacientes = [
+    { nombre: "Ana", edad: 72, seguro: true, turno: 8, especialidad: "cardiologia" },
+    { nombre: "Luis", edad: 45, seguro: true, turno: 3, especialidad: "emergencias" },
+    { nombre: "Carlos", edad: 65, seguro: false, turno: 12, especialidad: "cardiologia" },
+    { nombre: "Maria", edad: 80, seguro: true, turno: 1, especialidad: "traumatologia" },
+    { nombre: "Pedro", edad: 40, seguro: false, turno: 7, especialidad: "neurologia" },
+    { nombre: "Luis", edad: 10, seguro: false, turno: 20, especialidad: "emergencias" },
+    { nombre: "Jorge", edad: 30, seguro: false, turno: 2, especialidad: "cardiologia" }
+]
+
+// 1. Se necesita ver los pacientes
+// que no tienen seguro
+const sinSeguro = pacientes.filter((p) => p.seguro != false)
+
+// 2. Se neceistan los pacientes que tengan seguro
+// y además sean menor de 70 años
+
+// 3. Mostrar en consola un mensaje si es que hay algún paciente menor de edad
+// entrando por "emergencias"
+
+// 4. Se necesita saber quien es el paciente con el turno más alto
